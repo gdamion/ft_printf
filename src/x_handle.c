@@ -6,7 +6,7 @@
 /*   By: gdamion- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/04 21:02:22 by gdamion-          #+#    #+#             */
-/*   Updated: 2019/03/17 18:03:07 by gdamion-         ###   ########.fr       */
+/*   Updated: 2019/03/17 18:43:49 by gdamion-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void		x_process(int var)
 	{
 		if (g_a.flags[4] == '#' && x != 0)
 		{
-			var? ft_putstr("0X") : ft_putstr("0x");
+			var ? ft_putstr("0X") : ft_putstr("0x");
 			g_printed += 2;
 			pre = 2;
 		}
@@ -108,7 +108,7 @@ void		x_process(int var)
 	{
 		if (g_a.flags[4] == '#' && x != 0)
 		{
-			var? ft_putstr("0X") : ft_putstr("0x");
+			var ? ft_putstr("0X") : ft_putstr("0x");
 			g_printed += 2;
 			pre = 2;
 		}
@@ -147,7 +147,7 @@ void		x_process(int var)
 		}
 		else if (pre)
 		{
-			var? ft_putstr("0X") : ft_putstr("0x");
+			var ? ft_putstr("0X") : ft_putstr("0x");
 			g_printed += 2;
 		}
 		while (zeronum > 0)

@@ -6,13 +6,13 @@
 /*   By: gdamion- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/04 21:02:04 by gdamion-          #+#    #+#             */
-/*   Updated: 2019/03/17 13:48:16 by gdamion-         ###   ########.fr       */
+/*   Updated: 2019/03/17 19:04:33 by gdamion-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/header.h"
 
-char	hex_digit(int v)
+static char	hex_digit(int v)
 {
 	if (v >= 0 && v < 10)
 		return ('0' + v);
@@ -20,7 +20,7 @@ char	hex_digit(int v)
 		return ('a' + v - 10);
 }
 
-void	address_hex(void *p0, char **addr)
+static void	address_hex(void *p0, char **addr)
 {
 	int			i;
 	int			j;
@@ -49,36 +49,40 @@ void	address_hex(void *p0, char **addr)
 	}
 }
 
-void	p_process(void)
+static void	p_print(char *addr)
+{
+	int i;
+
+	i = g_a.width - ft_strlen(addr);
+	if (g_a.flags[3] == '-')
+	{
+		ft_putstr(addr);
+		while (i > 0)
+		{
+			PRINT(' ');
+			i--;
+		}
+	}
+	else
+	{
+		while (i > 0)
+		{
+			PRINT(' ');
+			i--;
+		}
+		ft_putstr(addr);
+	}
+}
+
+void		p_process(void)
 {
 	void	*p;
-	int		i;
 	char	*addr;
 
 	p = va_arg(g_ap, void*);
 	address_hex(p, &addr);
 	if (g_a.width > ft_strlen(addr))
-	{
-		i = g_a.width - ft_strlen(addr);
-		if (g_a.flags[3] == '-')
-		{
-			ft_putstr(addr);
-			while (i > 0)
-			{
-				PRINT(' ');
-				i--;
-			}
-		}
-		else
-		{
-			while (i > 0)
-			{
-				PRINT(' ');
-				i--;
-			}
-			ft_putstr(addr);
-		}
-	}
+		p_print(addr);
 	else
 		ft_putstr(addr);
 	free(addr);

@@ -6,7 +6,7 @@
 /*   By: gdamion- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/04 21:02:00 by gdamion-          #+#    #+#             */
-/*   Updated: 2019/03/17 18:14:40 by gdamion-         ###   ########.fr       */
+/*   Updated: 2019/03/17 18:54:27 by gdamion-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,24 +18,23 @@ static int					g_numlen;
 static int					g_zeronum;
 static int					g_n;
 
-static void					in_octave(char **dec, unsigned long long o)
+static void					o_minflag2(void)
 {
-	int len;
-	int i;
-
-	len = 1;
-	while (o /= 8)
-		len++;
-	ALLOC(*dec, char*, sizeof(char) * (len + 1));
-	(*dec)[len] = '\0';
-	i = len - 1;
-	while (o / 8)
+	if (!(g_a.prec == 0 && g_o == 0))
 	{
-		(*dec)[i] = o % 8 + '0';
-		o /= 8;
-		i--;
+		ft_putstr(g_num);
+		g_printed += g_numlen;
 	}
-	(*dec)[i] = o % 8 + '0';
+	else
+	{
+		PRINT(' ');
+	}
+	g_n = g_a.width - (g_zeronum + g_numlen);
+	while (g_n > 0)
+	{
+		PRINT(' ');
+		g_n--;
+	}
 }
 
 static void					o_minflag(void)
@@ -57,21 +56,7 @@ static void					o_minflag(void)
 	}
 	else
 		g_zeronum = 0;
-	if (!(g_a.prec == 0 && g_o == 0))
-	{
-		ft_putstr(g_num);
-		g_printed += g_numlen;
-	}
-	else
-	{
-		PRINT(' ');
-	}
-	g_n = g_a.width - (g_zeronum + g_numlen);
-	while (g_n > 0)
-	{
-		PRINT(' ');
-		g_n--;
-	}
+	o_minflag2();
 }
 
 static void					o_zeroflag(void)

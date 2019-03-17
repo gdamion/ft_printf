@@ -6,14 +6,30 @@
 /*   By: gdamion- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/04 21:02:08 by gdamion-          #+#    #+#             */
-/*   Updated: 2019/03/17 17:39:42 by gdamion-         ###   ########.fr       */
+/*   Updated: 2019/03/17 18:40:59 by gdamion-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/header.h"
 
+static void	proc_noflag(void)
+{
+	int i;
 
-void	proc_process(void)
+	i = g_a.width - 1;
+	while (i > 0)
+	{
+		if (g_a.flags[0] == '0')
+			ft_putchar('0');
+		else
+			ft_putchar(' ');
+		g_printed++;
+		i--;
+	}
+	PRINT('%');
+}
+
+void		proc_process(void)
 {
 	int i;
 
@@ -28,17 +44,5 @@ void	proc_process(void)
 		}
 	}
 	else
-	{
-		i = g_a.width - 1;
-		while (i > 0)
-		{
-			if (g_a.flags[0] == '0')
-				ft_putchar('0');
-			else
-				ft_putchar(' ');
-			g_printed++;
-			i--;
-		}
-		PRINT('%');
-	}
+		proc_noflag();
 }

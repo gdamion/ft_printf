@@ -6,7 +6,7 @@
 /*   By: gdamion- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/29 16:09:52 by gdamion-          #+#    #+#             */
-/*   Updated: 2019/03/17 16:43:29 by gdamion-         ###   ########.fr       */
+/*   Updated: 2019/03/17 19:03:42 by gdamion-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void				*ft_memmove(void *dest, const void *src, size_t n);
 void				*ft_memchr(const void *s, int c, size_t n);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 size_t				ft_strlen(const char *s);
-size_t				ft_strnlen(const char *s, size_t n);
+int					ft_strnlen(const char *s, int n);
 char				*ft_strdup(const char *s);
 char				*ft_strcpy(char *dest, const char *src);
 char				*ft_strncpy(char *dest, const char *src, size_t n);
@@ -91,7 +91,6 @@ void				ft_print_words_tables(char **str);
 void				ft_swap(void *a, void *b);
 char				*ft_strndup(const char *s, size_t n);
 char				*ft_alphrev(char *str);
-size_t				ft_strnlen(const char *s, size_t n);
 
 int					ft_is_inf_or_nan(long double d);
 
