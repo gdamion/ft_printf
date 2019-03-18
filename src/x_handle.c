@@ -6,7 +6,7 @@
 /*   By: gdamion- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/04 21:02:22 by gdamion-          #+#    #+#             */
-/*   Updated: 2019/03/17 18:43:49 by gdamion-         ###   ########.fr       */
+/*   Updated: 2019/03/18 10:16:23 by gdamion-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void		in_hexagonal(char **dec, unsigned long long o, int var)
 	len = ft_cnt_hex(o);
 	ALLOC(*dec, char*, sizeof(char) * (len + 1));
 	(*dec)[len] = '\0';
-	if (var)
+	if (!var)
 		reg = 'a';
 	else
 		reg = 'A';

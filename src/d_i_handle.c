@@ -6,7 +6,7 @@
 /*   By: gdamion- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/04 21:01:55 by gdamion-          #+#    #+#             */
-/*   Updated: 2019/03/17 15:52:55 by gdamion-         ###   ########.fr       */
+/*   Updated: 2019/03/18 11:30:00 by gdamion-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,9 @@ static void			d_i_minflag(void)
 		g_printed += g_numlen;
 	}
 	else
+	{
 		PRINT(' ');
+	}
 	g_i = g_a.width - (g_pre + g_zeronum + g_numlen);
 	if (g_i > 0)
 		while (g_i != 0)
@@ -98,7 +100,9 @@ static void			d_i_noflag(void)
 		g_i--;
 	}
 	if (!add_pre() && g_i == 1)
+	{
 		PRINT(' ');
+	}
 	while (g_zeronum > 0)
 	{
 		PRINT('0');
@@ -110,7 +114,9 @@ static void			d_i_noflag(void)
 		g_printed += g_numlen;
 	}
 	else if (g_a.prec == 0 && g_di == 0 && g_a.width > 0)
+	{
 		PRINT(' ');
+	}
 }
 
 void				d_i_process(void)

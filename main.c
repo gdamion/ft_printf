@@ -1,41 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   o_handle2.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdamion- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/17 18:51:38 by gdamion-          #+#    #+#             */
-/*   Updated: 2019/03/18 10:47:41 by gdamion-         ###   ########.fr       */
+/*   Created: 2019/03/18 10:09:39 by gdamion-          #+#    #+#             */
+/*   Updated: 2019/03/18 10:40:17 by gdamion-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/header.h"
+#include "includes/header.h"
+#include <stdio.h>
 
-static int oct_cnt(unsigned long long o)
+int main()
 {
-	int i;
+	//ft_printf("ME %5%\n");
+	//printf("HE %5%\n");
 
-	i = 1;
-	while (o /= 8)
-		i++;
-	return (i);
-}
+	// ft_printf("%s\n", "abc");
+	// printf("%s\n", "abc");
 
-void	in_octave(char **dec, unsigned long long o)
-{
-	int len;
-	int i;
-
-	len = oct_cnt(o);
-	ALLOC(*dec, char*, sizeof(char) * (len + 1));
-	(*dec)[len] = '\0';
-	i = len - 1;
-	while (o / 8)
-	{
-		(*dec)[i] = o % 8 + '0';
-		o /= 8;
-		i--;
-	}
-	(*dec)[i] = o % 8 + '0';
+	ft_printf("%o\n", 40);
+	printf("%o\n", 40);
 }

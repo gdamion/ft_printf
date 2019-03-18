@@ -6,7 +6,7 @@
 /*   By: gdamion- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/04 21:02:13 by gdamion-          #+#    #+#             */
-/*   Updated: 2019/03/17 18:40:11 by gdamion-         ###   ########.fr       */
+/*   Updated: 2019/03/18 10:30:18 by gdamion-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,10 @@ static void	s_minflag(char *s)
 	int a;
 
 	ft_putnstr(s, g_a.prec);
-	a = ft_strnlen(s, g_a.prec);
+	if (g_a.prec >= 0)
+		a = ft_strnlen(s, g_a.prec);
+	else
+		a = ft_strlen(s);
 	g_printed += a;
 	i = g_a.width - a;
 	while (i > 0)
@@ -33,7 +36,10 @@ static void	s_noflag(char *s)
 	int i;
 	int a;
 
-	a = ft_strnlen(s, g_a.prec);
+	if (g_a.prec >= 0)
+		a = ft_strnlen(s, g_a.prec);
+	else
+		a = ft_strlen(s);
 	g_printed += a;
 	i = g_a.width - a;
 	while (i > 0)

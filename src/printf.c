@@ -6,12 +6,11 @@
 /*   By: gdamion- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/18 12:44:37 by gdamion-          #+#    #+#             */
-/*   Updated: 2019/03/17 18:47:01 by gdamion-         ###   ########.fr       */
+/*   Updated: 2019/03/18 10:07:05 by gdamion-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/header.h"
-#include <stdio.h>
 
 static int	g_i;
 

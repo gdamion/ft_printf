@@ -6,7 +6,7 @@
 #    By: gdamion- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/29 14:13:15 by gdamion-          #+#    #+#              #
-#    Updated: 2019/03/17 18:55:29 by gdamion-         ###   ########.fr        #
+#    Updated: 2019/03/18 10:09:05 by gdamion-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@
 NAME = libftprintf.a
 
 SRC = $(addsuffix .c,c_handle d_i_handle o_handle o_handle2 p_handle \
-	proc_handle f_handle f_handle2 s_handle u_handle x_handle ft_itoa_long printf ulong_init)
+					proc_handle f_handle f_handle2 s_handle u_handle \
+					x_handle ft_itoa_long printf ulong_init)
 SRC_DIR = src/
 
 LIB_DIR = lib/
