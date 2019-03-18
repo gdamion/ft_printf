@@ -6,7 +6,7 @@
 /*   By: pcollio- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/04 21:17:51 by gdamion-          #+#    #+#             */
-/*   Updated: 2019/03/18 17:01:49 by pcollio-         ###   ########.fr       */
+/*   Updated: 2019/03/18 17:24:19 by pcollio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,27 +89,34 @@ static void	f_noflag(void)
 	ft_putstr(g_num);
 }
 
+static int	check_specials(void)
+{
+	if (ft_is_inf(g_f) == 1)
+	{
+		ft_putstr("inf");
+		return (1);
+	}
+	else if (ft_is_inf(g_f) == -1)
+	{
+		ft_putstr("-inf");
+		return (1);
+	}
+	else if (ft_is_nan(g_f) == 1)
+	{
+		ft_putstr("nan");
+		return (1);
+	}
+	return (0);
+}
+
 void		f_process(void)
 {
 	if (g_a.length[0] == 'L')
 		g_f = va_arg(g_ap, long double);
 	else
 		g_f = va_arg(g_ap, double);
-	if (ft_is_inf(g_f) == 1)
-	{
-		ft_putstr("inf");
+	if (check_specials() == 1)
 		return ;
-	}
-	else if (ft_is_inf(g_f) == -1)
-	{
-		ft_putstr("-inf");
-		return ;
-	}
-	else if (ft_is_nan(g_f) == 1)
-	{
-		ft_putstr("nan");
-		return ;
-	}
 	in_double(&g_num, g_f);
 	g_printed += (g_numlen = ft_strlen(g_num));
 	if (g_a.flags[3] == '-')

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   s_handle.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gdamion- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pcollio- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/04 21:02:13 by gdamion-          #+#    #+#             */
-/*   Updated: 2019/03/18 10:30:18 by gdamion-         ###   ########.fr       */
+/*   Updated: 2019/03/18 17:51:29 by pcollio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,13 @@ static void	s_minflag(char *s)
 	int i;
 	int a;
 
-	ft_putnstr(s, g_a.prec);
-	if (g_a.prec >= 0)
+	if (g_a.prec == 0)
+		return ;
+	else if (g_a.prec > 0)
 		a = ft_strnlen(s, g_a.prec);
 	else
 		a = ft_strlen(s);
+	ft_putnstr(s, g_a.prec);
 	g_printed += a;
 	i = g_a.width - a;
 	while (i > 0)
@@ -36,7 +38,9 @@ static void	s_noflag(char *s)
 	int i;
 	int a;
 
-	if (g_a.prec >= 0)
+	if (g_a.prec == 0)
+		return ;
+	else if (g_a.prec > 0)
 		a = ft_strnlen(s, g_a.prec);
 	else
 		a = ft_strlen(s);
