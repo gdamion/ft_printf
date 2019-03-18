@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   header.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gdamion- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pcollio- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/18 11:56:59 by gdamion-          #+#    #+#             */
-/*   Updated: 2019/03/18 12:35:27 by gdamion-         ###   ########.fr       */
+/*   Updated: 2019/03/18 15:53:21 by pcollio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,18 @@ void			x_process(int var);
 void			f_process(void);
 char			*ft_abs_itoa_long(unsigned long long n);
 
+void			add_flags(char **f, int *i);
+void			add_width(char **f, int *i);
+void			add_prec(char **f, int *i);
+void			add_length(char **f, int *i);
+
 void			in_double(char **num, long double f);
 void			ulong_init(unsigned long long *a);
 void			in_octave(char **dec, unsigned long long o);
 
 void			x_minflag(unsigned long long x, int var, int numlen, char *num);
-void			x_zeroflag(unsigned long long x, int var, int numlen, char *num);
+void			x_zeroflag(unsigned long long x,
+							int var, int numlen, char *num);
 void			x_noflag(unsigned long long x, int var, int numlen, char *num);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   x_handle2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gdamion- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pcollio- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/18 12:07:43 by gdamion-          #+#    #+#             */
-/*   Updated: 2019/03/18 12:35:45 by gdamion-         ###   ########.fr       */
+/*   Updated: 2019/03/18 15:42:30 by pcollio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,7 +124,8 @@ void		x_noflag(unsigned long long x, int var, int numlen, char *num)
 		g_zeronum = 0;
 	g_n = g_a.width - (g_pre + g_zeronum + numlen);
 	while (g_n > 0)
-	{		PRINT(' ');
+	{
+		PRINT(' ');
 		g_n--;
 	}
 	x_noflag2(x, var, numlen, num);

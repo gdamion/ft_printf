@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gdamion- <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: pcollio- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/29 14:13:15 by gdamion-          #+#    #+#              #
-#    Updated: 2019/03/17 16:45:57 by gdamion-         ###   ########.fr        #
+#    Updated: 2019/03/18 16:42:33 by pcollio-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,7 +72,8 @@ SRC =	ft_memset.c \
 		ft_lstadd.c \
 		ft_lstiter.c \
 		ft_lstmap.c \
-		ft_is_inf_or_nan.c
+		ft_is_inf.c \
+		ft_is_nan.c
 SRC_DIR = src/
 
 OBJ = $(patsubst %.c,%.o,$(SRC))

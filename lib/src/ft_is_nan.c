@@ -1,41 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   o_handle2.c                                        :+:      :+:    :+:   */
+/*   ft_is_nan.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcollio- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/17 18:51:38 by gdamion-          #+#    #+#             */
-/*   Updated: 2019/03/18 15:41:33 by pcollio-         ###   ########.fr       */
+/*   Created: 2019/03/18 16:10:39 by pcollio-          #+#    #+#             */
+/*   Updated: 2019/03/18 17:04:55 by pcollio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/header.h"
+#include "libft.h"
 
-static int	oct_cnt(unsigned long long o)
+int	ft_is_nan(long double d)
 {
-	int i;
-
-	i = 1;
-	while (o /= 8)
-		i++;
-	return (i);
-}
-
-void		in_octave(char **dec, unsigned long long o)
-{
-	int len;
-	int i;
-
-	len = oct_cnt(o);
-	ALLOC(*dec, char*, sizeof(char) * (len + 1));
-	(*dec)[len] = '\0';
-	i = len - 1;
-	while (o / 8)
-	{
-		(*dec)[i] = o % 8 + '0';
-		o /= 8;
-		i--;
-	}
-	(*dec)[i] = o % 8 + '0';
+	return ((d != d) || (((d) < 0) == ((d) >= 0)));
 }

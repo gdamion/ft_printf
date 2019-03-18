@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gdamion- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pcollio- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/29 16:09:52 by gdamion-          #+#    #+#             */
-/*   Updated: 2019/03/17 19:03:42 by gdamion-         ###   ########.fr       */
+/*   Updated: 2019/03/18 16:43:07 by pcollio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,7 @@ void				ft_swap(void *a, void *b);
 char				*ft_strndup(const char *s, size_t n);
 char				*ft_alphrev(char *str);
 
-int					ft_is_inf_or_nan(long double d);
+int					ft_is_inf(long double d);
+int					ft_is_nan(long double d);
 
 #endif

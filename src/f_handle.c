@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   f_handle.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gdamion- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pcollio- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/04 21:17:51 by gdamion-          #+#    #+#             */
-/*   Updated: 2019/03/17 17:10:23 by gdamion-         ###   ########.fr       */
+/*   Updated: 2019/03/18 17:01:49 by pcollio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,8 +95,21 @@ void		f_process(void)
 		g_f = va_arg(g_ap, long double);
 	else
 		g_f = va_arg(g_ap, double);
-	if (ft_is_inf_or_nan(g_f))
+	if (ft_is_inf(g_f) == 1)
+	{
+		ft_putstr("inf");
 		return ;
+	}
+	else if (ft_is_inf(g_f) == -1)
+	{
+		ft_putstr("-inf");
+		return ;
+	}
+	else if (ft_is_nan(g_f) == 1)
+	{
+		ft_putstr("nan");
+		return ;
+	}
 	in_double(&g_num, g_f);
 	g_printed += (g_numlen = ft_strlen(g_num));
 	if (g_a.flags[3] == '-')

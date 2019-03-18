@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   d_i_handle.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gdamion- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pcollio- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/04 21:01:55 by gdamion-          #+#    #+#             */
-/*   Updated: 2019/03/18 11:30:00 by gdamion-         ###   ########.fr       */
+/*   Updated: 2019/03/18 15:40:48 by pcollio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,19 +80,15 @@ static void			d_i_minflag(void)
 		PRINT(' ');
 	}
 	g_i = g_a.width - (g_pre + g_zeronum + g_numlen);
-	if (g_i > 0)
-		while (g_i != 0)
-		{
-			PRINT(' ');
-			g_i--;
-		}
+	while (g_i > 0)
+	{
+		PRINT(' ');
+		g_i--;
+	}
 }
 
 static void			d_i_noflag(void)
 {
-	g_zeronum = g_a.prec - g_numlen;
-	if (g_zeronum < 0)
-		g_zeronum = 0;
 	g_i = g_a.width - (g_zeronum + g_numlen);
 	while (g_i > 1)
 	{
@@ -136,6 +132,11 @@ void				d_i_process(void)
 		ft_putstr(g_num);
 	}
 	else
+	{
+		g_zeronum = g_a.prec - g_numlen;
+		if (g_zeronum < 0)
+			g_zeronum = 0;
 		d_i_noflag();
+	}
 	free(g_num);
 }
